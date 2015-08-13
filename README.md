@@ -17,7 +17,7 @@ And if you want to reload
 That's all.
 
 ###LICENSE
-[LICENSE UNDER MIT]()
+[LICENSE UNDER MIT](https://github.com/fenjuly/ArrowDownloadButton/raw/master/LICENSE)
 
 
 
