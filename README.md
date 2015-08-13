@@ -1,5 +1,5 @@
 # ArrowDownloadButton
-A download buttob with pretty coolanimatin, this is an implemention of [https://dribbble.com/shots/2012292-Download-Animation](https://dribbble.com/shots/2012292-Download-Animation)
+A download button with pretty cool animation, this is an implemention of [https://dribbble.com/shots/2012292-Download-Animation](https://dribbble.com/shots/2012292-Download-Animation)
 
 Enjoying it :)
 
