@@ -16,7 +16,8 @@ And if you want to reload
 
 That's all.
 
-###LINCENSE
+LINCENSE
+===
 
 The MIT License (MIT)
 
