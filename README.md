@@ -7,7 +7,7 @@ Enjoying it :)
 ![sreenshot](https://github.com/fenjuly/ArrowDownloadButton/blob/master/screenshots/arrowdownloadbutton.gif)
 
 ###Usage
-One scene is when you want to download someting.
+One scene is when you want to download something.
 * `startAnimating()`
 * `setProgress()`
 
