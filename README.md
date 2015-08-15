@@ -1,5 +1,5 @@
 # ArrowDownloadButton
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ArrowDownloadButton-green.svg?style=flat)](https://android-arsenal.com/details/1/2307)](https://android-arsenal.com/details/1/2307)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ArrowDownloadButton-green.svg?style=flat)](https://android-arsenal.com/details/1/2307)
 
 A download button with pretty cool animation, this is an implemention of [https://dribbble.com/shots/2012292-Download-Animation](https://dribbble.com/shots/2012292-Download-Animation)
 
