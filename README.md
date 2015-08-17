@@ -18,6 +18,43 @@ And if you want to reload
 
 That's all.
 
+###Get this into you build
+
+Gradle
+* Step1
+```
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+```
+* Step2
+```
+dependencies {
+    compile 'com.github.fenjuly:ArrowDownloadButton:9e15b85e8a'
+}
+```
+
+Maven
+* Step1
+```
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+```
+
+* Step2
+```
+<dependency>
+    <groupId>com.github.fenjuly</groupId>
+    <artifactId>ArrowDownloadButton</artifactId>
+    <version>9e15b85e8a</version>
+</dependency>
+```
+   
+
 ###LICENSE
 [LICENSE UNDER MIT](https://github.com/fenjuly/ArrowDownloadButton/raw/master/LICENSE)
 
