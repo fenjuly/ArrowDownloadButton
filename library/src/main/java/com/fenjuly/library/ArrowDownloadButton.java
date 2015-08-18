@@ -21,7 +21,7 @@ public class ArrowDownloadButton extends View {
 
     private static final int BLUE_ONE = Color.rgb(46, 164, 242);
     private static final int WHILE = Color.rgb(255, 255, 255);
-    private static final float RADUIS = 180;
+    private static final float RADIUS = 180;
     private static final int TRI_POINT_NUMBER = 17;
     private static final float MAX_WAVE_HEIGHT = 10;
     private static final float MIN_WAVE_HEIGHT = 5;
@@ -29,7 +29,7 @@ public class ArrowDownloadButton extends View {
     private static final int ANGLE = 360;
     private static final float TEXT_Y = 67.5f;
     private static final float OFFSET = 10;
-    private static final float SMALL_RADUIS = 5;
+    private static final float SMALL_RADIUS = 5;
     private static final float TEXT_SIZE = 40;
     private static final float ARC_WIDTH = 20;
     private static final float ARROW_WIDTH = 10;
@@ -49,41 +49,43 @@ public class ArrowDownloadButton extends View {
     private static final float HOOK_COUNT = 4;
     private static final float LITTLE_STEP = 8;
     private static final int DURATION = 20;
-    private static final int COMOLETE_DURATION = 20;
+    private static final int COMPLETE_DURATION = 20;
 
-    /** start instance **/
+    /**
+     * start instance
+     **/
     private static final String INSTANCE_STATE = "instance_state";
     /**
      *
      */
     private static final String X_I = "x";
-    private static final String Y_I= "y";
-    private static final String RADUS_I = "ratuis";
+    private static final String Y_I = "y";
+    private static final String RADIUS_I = "radius";
     private static final String MAX_WAVE_HEIGHT_I = "max_wave_height";
     private static final String MIN_WAVE_HEIGHT_I = "min_wave_height";
     private static final String TEXT_Y_I = "text_y";
     private static final String STEP_I = "step";
     private static final String ELASTICITY_STEP_I = "elasticity_step";
-    private static final String ROPE_STEP_X_I= "rope_step_x";
+    private static final String ROPE_STEP_X_I = "rope_step_x";
     private static final String ROPE_STEP_Y_I = "rope_step_y";
     private static final String ROPE_HEAD_STEP_Y_I = "rope_head_step_y";
     private static final String JUMP_STEP_I = "jump_step";
     private static final String DOWN_STEP_I = "down_step";
     private static final String TRI_STEP_I = "tri_step";
     private static final String HOOK_STEP_Y_I = "hook_step";
-    private static final String LITTLE_STEP_I ="little_step";
-    private static final String SMALL_RADUIS_I = "small_raduis";
+    private static final String LITTLE_STEP_I = "little_step";
+    private static final String SMALL_RADIUS_I = "small_radius";
     private static final String TEXT_SIZE_I = "text_size";
     private static final String ARC_WIDTH_I = "arc_width";
     private static final String ARROW_WIDTH_I = "arrow_width";
     private static final String TRI_WIDTH_I = "tri_width";
-    private static final String LOADING_WIDTH_I = "loadting_width";
-    private static final String ISFIRST_I = "isfirst";
-    private static final String ISANIMATING_I = "isanimating";
+    private static final String LOADING_WIDTH_I = "loading_width";
+    private static final String IS_FIRST_I = "is_first";
+    private static final String IS_ANIMATING_I = "is_animating";
     private static final String BEZIER_I = "bezier";
-    private static final String ISLOADING_I = "isloading";
-    private static final String ISCOMPLETED_I = "iscompleted";
-    private static final String ISEND_I = "isend";
+    private static final String IS_LOADING_I = "is_loading";
+    private static final String IS_COMPLETED_I = "is_completed";
+    private static final String IS_END_I = "is_end";
     private static final String COUNT_I = "count";
     private static final String LENGTH_I = "length";
     private static final String CURRENT_TIME_I = "current_time";
@@ -96,7 +98,7 @@ public class ArrowDownloadButton extends View {
 
     private float x = 550;
     private float y = 550;
-    private float raduis = RADUIS;
+    private float radius = RADIUS;
     private float maxWaveHeight = MAX_WAVE_HEIGHT;
     private float minWaveHeight = MIN_WAVE_HEIGHT;
     private float textY = TEXT_Y;
@@ -110,7 +112,7 @@ public class ArrowDownloadButton extends View {
     private float triStep = TRI_STEP;
     private float hookStepY = HOOK_STEP_Y;
     private float littleStep = LITTLE_STEP;
-    private float smallRaduis = SMALL_RADUIS;
+    private float smallRadius = SMALL_RADIUS;
     private float textSize = TEXT_SIZE;
     private float arcWidth = ARC_WIDTH;
     private float arrowWidth = ARROW_WIDTH;
@@ -151,8 +153,8 @@ public class ArrowDownloadButton extends View {
     private float waveHeight = MIN_WAVE_HEIGHT;
     private float progress = 0;
     private int hookCount = 0;
-    float lengthX = 3 * raduis / 4;
-    float lengthY = 3 * raduis / 4;
+    float lengthX = 3 * radius / 4;
+    float lengthY = 3 * radius / 4;
 
     public float getProgress() {
         return progress;
@@ -216,7 +218,7 @@ public class ArrowDownloadButton extends View {
             init();
             isFirst = false;
         }
-        canvas.drawCircle(x, y, raduis, arcPaint);
+        canvas.drawCircle(x, y, radius, arcPaint);
         drawArrow(canvas);
         if (isAnimating) {
             animating();
@@ -231,7 +233,7 @@ public class ArrowDownloadButton extends View {
 
     private void init() {
         float temp = getHeight() > getWidth() ? getWidth() / 2 : getHeight() / 2;
-        raduis = temp - temp * OFFSET / RADUIS - temp * ELASTICITY_STEP / RADUIS - 6;
+        radius = temp - temp * OFFSET / RADIUS - temp * ELASTICITY_STEP / RADIUS - 6;
         x = getPaddingLeft() + getWidth() / 2;
         y = getPaddingTop() + getHeight() / 2;
         maxWaveHeight = convert(MAX_WAVE_HEIGHT);
@@ -247,24 +249,24 @@ public class ArrowDownloadButton extends View {
         triStep = convert(TRI_STEP);
         hookStepY = convert(HOOK_STEP_Y);
         littleStep = convert(LITTLE_STEP);
-        smallRaduis = convert(SMALL_RADUIS);
+        smallRadius = convert(SMALL_RADIUS);
         textSize = convert(TEXT_SIZE);
         arcWidth = convert(ARC_WIDTH);
         arrowWidth = convert(ARROW_WIDTH);
         triWidth = convert(TRI_WIDTH);
         loadingWidth = convert(LOADING_WIDTH);
-        lengthX = 3 * raduis / 4;
-        lengthY = 3 * raduis / 4;
+        lengthX = 3 * radius / 4;
+        lengthY = 3 * radius / 4;
 
         arrowPath = new Path();
         triPath = new Path();
         textPath = new Path();
         oval = new RectF();
-        oval.left = x - raduis;
-        oval.top = y - raduis;
-        oval.right = x + raduis;
-        oval.bottom = y + raduis;
-        length = raduis / 2;
+        oval.left = x - radius;
+        oval.top = y - radius;
+        oval.right = x + radius;
+        oval.bottom = y + radius;
+        length = radius / 2;
         initializePaints();
         initializePoints();
     }
@@ -286,13 +288,13 @@ public class ArrowDownloadButton extends View {
         bezier = false;
         isCompleted = false;
         isEnd = false;
-        length = raduis / 2;
+        length = radius / 2;
         count = 0;
         hookCount = 0;
         jumpPoint.x = -1;
         progress = 0;
-        lengthX = 3 * raduis / 4;
-        lengthY = 3 * raduis / 4;
+        lengthX = 3 * radius / 4;
+        lengthY = 3 * radius / 4;
         a.y = y + length;
         b.y = y - length;
         e.y = y + length;
@@ -339,7 +341,7 @@ public class ArrowDownloadButton extends View {
                 }
             }
             count++;
-                postInvalidateDelayed(DURATION);
+            postInvalidateDelayed(DURATION);
         } else {
             isAnimating = false;
             bezier = false;
@@ -354,14 +356,15 @@ public class ArrowDownloadButton extends View {
 
     /**
      * under loading
-     * @param canvas
+     *
+     * @param canvas Target Canvas
      */
     private void loading(Canvas canvas) {
         Point currentPoint = triPoints.get(0);
         Point nextPoint;
         for (int i = 0; i < TRI_POINT_NUMBER; i++) {
             Point p = triPoints.get(i);
-            p.x = (x - 3 * raduis / 4) + triStep * i;
+            p.x = (x - 3 * radius / 4) + triStep * i;
             p.y = y + calculateTri(TIME_STEP * i, currentTime);
         }
         for (int i = 1; i < TRI_POINT_NUMBER; i++) {
@@ -369,7 +372,7 @@ public class ArrowDownloadButton extends View {
             triPath.reset();
             triPath.moveTo(currentPoint.x, currentPoint.y);
             triPath.lineTo(nextPoint.x, nextPoint.y);
-            canvas.drawCircle(nextPoint.x, nextPoint.y, smallRaduis, smallPaint);
+            canvas.drawCircle(nextPoint.x, nextPoint.y, smallRadius, smallPaint);
             canvas.drawPath(triPath, triPaint);
             currentPoint = nextPoint;
         }
@@ -386,21 +389,22 @@ public class ArrowDownloadButton extends View {
      * the method do such tings:
      * 1.draw arrow.
      * 2.when animate was completed, let the small ball jump.
-     * @param canvas
+     *
+     * @param canvas Target Canvas
      */
     protected void drawArrow(Canvas canvas) {
         if (jumpPoint.x != -1) {
-            canvas.drawCircle(jumpPoint.x, jumpPoint.y, smallRaduis, smallPaint);
+            canvas.drawCircle(jumpPoint.x, jumpPoint.y, smallRadius, smallPaint);
         }
         if (bezier) {
             arrowPath.reset();
             arrowPath.moveTo(c.x, c.y);
             arrowPath.quadTo(e.x, e.y, d.x, d.y);
             canvas.drawPath(arrowPath, arrowPaint);
-        } else if (isLoading) {
+        } /* else if (isLoading) {
         } else if (isCompleted) {
-        } else if (isEnd) {
-            canvas.drawCircle(x, y, raduis, loadingPaint);
+        } */ else if (isEnd) {
+            canvas.drawCircle(x, y, radius, loadingPaint);
             drawArrowOrHook(canvas);
         } else {
             arrowPath.reset();
@@ -408,8 +412,8 @@ public class ArrowDownloadButton extends View {
             arrowPath.lineTo(b.x, b.y);
             canvas.drawPath(arrowPath, arrowPaint);
 
-            canvas.drawCircle(a.x, a.y, smallRaduis, smallPaint);
-            canvas.drawCircle(b.x, b.y, smallRaduis, smallPaint);
+            canvas.drawCircle(a.x, a.y, smallRadius, smallPaint);
+            canvas.drawCircle(b.x, b.y, smallRadius, smallPaint);
 
             drawArrowOrHook(canvas);
 
@@ -418,7 +422,8 @@ public class ArrowDownloadButton extends View {
 
     /**
      * draw arrow or hook
-     * @param canvas
+     *
+     * @param canvas Target Canvas
      */
     private void drawArrowOrHook(Canvas canvas) {
         arrowPath.reset();
@@ -430,17 +435,18 @@ public class ArrowDownloadButton extends View {
         arrowPath.lineTo(d.x, d.y);
         canvas.drawPath(arrowPath, arrowPaint);
 
-        canvas.drawCircle(c.x, c.y, smallRaduis, smallPaint);
-        canvas.drawCircle(d.x, d.y, smallRaduis, smallPaint);
-        canvas.drawCircle(e.x, e.y, smallRaduis, smallPaint);
+        canvas.drawCircle(c.x, c.y, smallRadius, smallPaint);
+        canvas.drawCircle(d.x, d.y, smallRadius, smallPaint);
+        canvas.drawCircle(e.x, e.y, smallRadius, smallPaint);
     }
 
     /**
      * the animate after loading
-     * @param canvas
+     *
+     * @param canvas Target Canvas
      */
     private void afterCompleted(Canvas canvas) {
-        canvas.drawCircle(x, y, raduis, loadingPaint);
+        canvas.drawCircle(x, y, radius, loadingPaint);
         if (hookCount == HOOK_COUNT - 1) {
             e.y = e.y + littleStep;
             c.x = c.x - littleStep;
@@ -454,12 +460,12 @@ public class ArrowDownloadButton extends View {
             lengthX = lengthX * 3 / 4;
             c.x = x - lengthX * 3 / 4;
             c.y = y;
-            d.x = x + lengthY - raduis / (float) 8 * (hookCount + 1);
+            d.x = x + lengthY - radius / (float) 8 * (hookCount + 1);
             d.y = y - hookStepY * (hookCount + 1);
             hookCount++;
         }
         drawArrowOrHook(canvas);
-        postInvalidateDelayed(COMOLETE_DURATION);
+        postInvalidateDelayed(COMPLETE_DURATION);
 
     }
 
@@ -502,26 +508,27 @@ public class ArrowDownloadButton extends View {
     }
 
     protected void initializePoints() {
-        a = new Point(x, y + raduis / 2);
-        b = new Point(x, y - raduis / 2);
-        c = new Point(x - raduis / 4, y + raduis / 4);
-        d = new Point(x + raduis / 4, y + raduis / 4);
-        e = new Point(x, y + raduis / 2);
+        a = new Point(x, y + radius / 2);
+        b = new Point(x, y - radius / 2);
+        c = new Point(x - radius / 4, y + radius / 4);
+        d = new Point(x + radius / 4, y + radius / 4);
+        e = new Point(x, y + radius / 2);
         jumpPoint = new Point();
 
         for (int i = 0; i < TRI_POINT_NUMBER; i++) {
             Point point = new Point();
-            point.x = (x - 3 * raduis / 4) + triStep * i;
+            point.x = (x - 3 * radius / 4) + triStep * i;
             point.y = y + calculateTri(TIME_STEP * i, 0);
             triPoints.add(point);
         }
     }
 
     /**
-     * calcaulate the wave
-     * @param originalTime
-     * @param currentTime
-     * @return
+     * calculate the wave
+     *
+     * @param originalTime original time
+     * @param currentTime  current time
+     * @return wave
      */
     private float calculateTri(float originalTime, float currentTime) {
         if (progress < PROGRESS / 3) {
@@ -535,7 +542,7 @@ public class ArrowDownloadButton extends View {
     }
 
     private float convert(float original) {
-        return raduis * original / RADUIS;
+        return radius * original / RADIUS;
     }
 
     @Override
@@ -544,7 +551,7 @@ public class ArrowDownloadButton extends View {
         bundle.putParcelable(INSTANCE_STATE, super.onSaveInstanceState());
         bundle.putFloat(X_I, x);
         bundle.putFloat(Y_I, y);
-        bundle.putFloat(RADUS_I, raduis);
+        bundle.putFloat(RADIUS_I, radius);
         bundle.putFloat(MAX_WAVE_HEIGHT_I, maxWaveHeight);
         bundle.putFloat(MIN_WAVE_HEIGHT_I, minWaveHeight);
         bundle.putFloat(TEXT_Y_I, textY);
@@ -558,18 +565,18 @@ public class ArrowDownloadButton extends View {
         bundle.putFloat(TRI_STEP_I, triStep);
         bundle.putFloat(HOOK_STEP_Y_I, hookStepY);
         bundle.putFloat(LITTLE_STEP_I, littleStep);
-        bundle.putFloat(SMALL_RADUIS_I, smallRaduis);
+        bundle.putFloat(SMALL_RADIUS_I, smallRadius);
         bundle.putFloat(TEXT_SIZE_I, textSize);
         bundle.putFloat(ARC_WIDTH_I, arcWidth);
         bundle.putFloat(ARROW_WIDTH_I, arrowWidth);
         bundle.putFloat(TRI_WIDTH_I, triWidth);
         bundle.putFloat(LOADING_WIDTH_I, loadingWidth);
-        bundle.putBoolean(ISFIRST_I, isFirst);
-        bundle.putBoolean(ISANIMATING_I, isAnimating);
+        bundle.putBoolean(IS_FIRST_I, isFirst);
+        bundle.putBoolean(IS_ANIMATING_I, isAnimating);
         bundle.putBoolean(BEZIER_I, bezier);
-        bundle.putBoolean(ISLOADING_I, isLoading);
-        bundle.putBoolean(ISCOMPLETED_I, isCompleted);
-        bundle.putBoolean(ISEND_I, isEnd);
+        bundle.putBoolean(IS_LOADING_I, isLoading);
+        bundle.putBoolean(IS_COMPLETED_I, isCompleted);
+        bundle.putBoolean(IS_END_I, isEnd);
         bundle.putInt(COUNT_I, count);
         bundle.putFloat(LENGTH_I, length);
         bundle.putInt(CURRENT_TIME_I, currentTime);
@@ -587,7 +594,7 @@ public class ArrowDownloadButton extends View {
             final Bundle bundle = (Bundle) state;
             x = bundle.getFloat(X_I);
             y = bundle.getFloat(Y_I);
-            raduis = bundle.getFloat(RADUS_I);
+            radius = bundle.getFloat(RADIUS_I);
             maxWaveHeight = bundle.getFloat(MAX_WAVE_HEIGHT_I);
             minWaveHeight = bundle.getFloat(MIN_WAVE_HEIGHT_I);
             textY = bundle.getFloat(TEXT_Y_I);
@@ -601,18 +608,18 @@ public class ArrowDownloadButton extends View {
             triStep = bundle.getFloat(TRI_STEP_I);
             hookStepY = bundle.getFloat(HOOK_STEP_Y_I);
             littleStep = bundle.getFloat(LITTLE_STEP_I);
-            smallRaduis = bundle.getFloat(SMALL_RADUIS_I);
+            smallRadius = bundle.getFloat(SMALL_RADIUS_I);
             textSize = bundle.getFloat(TEXT_SIZE_I);
             arcWidth = bundle.getFloat(ARC_WIDTH_I);
             arrowWidth = bundle.getFloat(ARROW_WIDTH_I);
             triWidth = bundle.getFloat(TRI_WIDTH_I);
             loadingWidth = bundle.getFloat(LOADING_WIDTH_I);
-            isFirst = bundle.getBoolean(ISFIRST_I);
-            isAnimating = bundle.getBoolean(ISANIMATING_I);
+            isFirst = bundle.getBoolean(IS_FIRST_I);
+            isAnimating = bundle.getBoolean(IS_ANIMATING_I);
             bezier = bundle.getBoolean(BEZIER_I);
-            isLoading = bundle.getBoolean(ISLOADING_I);
-            isCompleted = bundle.getBoolean(ISCOMPLETED_I);
-            isEnd = bundle.getBoolean(ISEND_I);
+            isLoading = bundle.getBoolean(IS_LOADING_I);
+            isCompleted = bundle.getBoolean(IS_COMPLETED_I);
+            isEnd = bundle.getBoolean(IS_END_I);
             count = bundle.getInt(COUNT_I);
             length = bundle.getFloat(LENGTH_I);
             currentTime = bundle.getInt(CURRENT_TIME_I);
