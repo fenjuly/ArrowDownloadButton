@@ -401,9 +401,9 @@ public class ArrowDownloadButton extends View {
             arrowPath.moveTo(c.x, c.y);
             arrowPath.quadTo(e.x, e.y, d.x, d.y);
             canvas.drawPath(arrowPath, arrowPaint);
-        } /* else if (isLoading) {
+        }  else if (isLoading) {
         } else if (isCompleted) {
-        } */ else if (isEnd) {
+        }  else if (isEnd) {
             canvas.drawCircle(x, y, radius, loadingPaint);
             drawArrowOrHook(canvas);
         } else {
