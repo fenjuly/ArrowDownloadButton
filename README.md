@@ -22,7 +22,7 @@ That's all.
 
 Gradle
 * Step1
-```
+```groovy
 repositories {
     maven {
         url "https://jitpack.io"
@@ -30,7 +30,7 @@ repositories {
 }
 ```
 * Step2
-```
+```groovy
 dependencies {
     compile 'com.github.fenjuly:ArrowDownloadButton:9e15b85e8a'
 }
@@ -38,7 +38,7 @@ dependencies {
 
 Maven
 * Step1
-```
+```xml
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
@@ -46,7 +46,7 @@ Maven
 ```
 
 * Step2
-```
+```xml
 <dependency>
     <groupId>com.github.fenjuly</groupId>
     <artifactId>ArrowDownloadButton</artifactId>
