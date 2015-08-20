@@ -18,7 +18,7 @@ And if you want to reload
 
 That's all.
 
-###Get this into you build
+###Get this into your build
 
 Gradle
 * Step1
