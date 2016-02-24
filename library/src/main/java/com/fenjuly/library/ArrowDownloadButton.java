@@ -386,7 +386,7 @@ public class ArrowDownloadButton extends View {
     }
 
     /**
-     * the method do such tings:
+     * the method do such things:
      * 1.draw arrow.
      * 2.when animate was completed, let the small ball jump.
      *
