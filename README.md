@@ -5,10 +5,10 @@ A download button with pretty cool animation, this is an implemention of [https:
 
 Enjoying it :)
 
-###ScreenShot
+### ScreenShot
 ![sreenshot](https://github.com/fenjuly/ArrowDownloadButton/blob/master/screenshots/arrowdownloadbutton.gif)
 
-###Usage
+### Usage
 One scene is when you want to download something.
 * `startAnimating()`
 * `setProgress()`
@@ -18,7 +18,7 @@ And if you want to reload
 
 That's all.
 
-###Get this into your build
+### Get this into your build
 
 Gradle
 * Step1
@@ -55,7 +55,7 @@ Maven
 ```
    
 
-###LICENSE
+### LICENSE
 [LICENSE UNDER MIT](https://github.com/fenjuly/ArrowDownloadButton/raw/master/LICENSE)
 
 
