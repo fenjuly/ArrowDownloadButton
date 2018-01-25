@@ -54,6 +54,11 @@ Maven
 </dependency>
 ```
    
+## Third Party Bindings
+  		  
+### React Native
+You may now use this library with [React Native](https://github.com/facebook/react-native) via the module [here](https://github.com/prscX/react-native-download-button)
+
 
 ### LICENSE
 [LICENSE UNDER MIT](https://github.com/fenjuly/ArrowDownloadButton/raw/master/LICENSE)
